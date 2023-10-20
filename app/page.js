@@ -32,7 +32,7 @@ export default function Home() {
 
       if (responseData) {
         setShowOverlay(true);
-        settrxID(responseData);
+        settrxID(responseData.id);
       }
     } catch (error) {
       console.error("There was an error with the transaction:", error);
@@ -70,14 +70,14 @@ export default function Home() {
   return (
     <div className="w-full h-full bg-slate-900 text-black">
       {showOverlay && (
-        <div className="fixed top-0 left-0 w-full h-full z-50 bg-opacity-75 bg-black flex justify-center items-center">
+        <div className="fixed top-0 left-0 w-full h-full z-50 bg-opacity-75 bg-black flex justify-center items-center overflow-hidden">
           <iframe
-            src="https://front-git-test-way2pay.vercel.app/redirect/"
+            src={`https://front-git-test-way2pay.vercel.app/redirect/${trxID}`}
             title="External Page"
-            width="80%"
-            height="80%"
-            frameBorder="0"
+            width="100%"
+            height="100%"
           ></iframe>
+
           <button
             className="absolute top-5 right-5 bg-red-600 text-white p-2 rounded"
             onClick={() => setShowOverlay(false)}
