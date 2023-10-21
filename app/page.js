@@ -70,7 +70,7 @@ export default function Home() {
   return (
     <div className="w-full h-full bg-slate-900 text-black">
       {showOverlay && (
-        <div className="fixed top-0 left-0 w-full h-full z-50 bg-opacity-75 bg-black flex justify-center items-center overflow-hidden">
+        <div className="fixed top-0 left-0 w-full h-full z-50 bg-opacity-75  flex justify-center items-center overflow-hidden">
           <iframe
             src={`https://front-git-test-way2pay.vercel.app/redirect/${trxID}`}
             title="External Page"
